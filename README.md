@@ -1,7 +1,7 @@
 # Andy-Plays-Guitar
 
 # 🎸 Andy Plays Guitar  
-*A synthwave‑styled guitar learning platform built with Django + React.*
+*A guitar learning platform built with Django + React.*
 
 Andy Plays Guitar is a full‑stack web application designed to deliver guitar tabs, video lessons, and blog content through a clean, fast, modern interface. The project blends a **Django REST API backend** with a **React + Vite frontend**, wrapped in a retro‑arcade aesthetic inspired by neon grids, VHS glow, and 80s UI minimalism.
 
