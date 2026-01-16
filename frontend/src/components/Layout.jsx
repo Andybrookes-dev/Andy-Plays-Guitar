@@ -6,10 +6,11 @@ export default function Layout() {
   return (
     <>
       <Navbar />
-      <main style={{ padding: "2rem" }}>
+      <main style={{ padding: "2rem", maxWidth: "1200px", margin: "0 auto" }}>
         <Outlet />
       </main>
       <Footer />
     </>
   );
 }
+
