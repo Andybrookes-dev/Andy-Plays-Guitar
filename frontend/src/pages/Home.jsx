@@ -1,8 +1,6 @@
-import Layout from "../components/Layout";
-
 export default function Home() {
   return (
-    <Layout>
+    <>
       <section style={styles.hero}>
         <h1 style={styles.title}>Andy Plays Guitar</h1>
         <p style={styles.subtitle}>Tabs • Lessons • Blog</p>
@@ -24,10 +22,9 @@ export default function Home() {
           <p style={styles.cardText}>Read posts about technique, gear, and creativity.</p>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
-
 const styles = {
   hero: {
     textAlign: "center",
@@ -60,7 +57,7 @@ const styles = {
   cardTitle: {
     marginBottom: "0.5rem",
     fontSize: "1.5rem",
-    color: "#d32f2f", // rock red accent
+    color: "#d32f2f",
   },
   cardText: {
     opacity: 0.85,
