@@ -1,0 +1,23 @@
+.blog-section {
+  position: relative;
+  background-image: url('/assets/blog-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4rem 2rem;
+  color: white;
+  min-height: 60vh; /* ensures you SEE the background */
+}
+
+.blog-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.blog-content {
+  position: relative;
+  z-index: 1;
+}

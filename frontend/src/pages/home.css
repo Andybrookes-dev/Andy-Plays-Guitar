@@ -1,0 +1,111 @@
+/* --------------------------------------------------
+   GLOBAL LAYOUT
+-------------------------------------------------- */
+.home-container {
+  background: #0d0d0d;
+  min-height: 100vh;
+  color: #f2f2f2;
+  font-family: "Inter", sans-serif;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Smooth fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Consistent layout width */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+
+/* --------------------------------------------------
+   HERO SECTION
+-------------------------------------------------- */
+.hero {
+  text-align: center;
+  padding: clamp(4rem, 10vw, 8rem) 1rem;
+  background: radial-gradient(circle at center, #1a1a1a, #000);
+}
+
+.hero-title {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  background: linear-gradient(90deg, #ff005d, #ffb300, #00d4ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  margin-top: 1rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  opacity: 0.85;
+  font-weight: 300;
+}
+
+
+/* --------------------------------------------------
+   FEATURE CARDS
+-------------------------------------------------- */
+.card-grid {
+  display: grid;
+  gap: 2rem;
+  padding: clamp(2rem, 6vw, 4rem) 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #111;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.55);
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #ff005d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card p {
+  opacity: 0.9;
+  line-height: 1.55;
+}
+
+
+/* --------------------------------------------------
+   LIGHT MODE SUPPORT
+-------------------------------------------------- */
+@media (prefers-color-scheme: light) {
+  .home-container {
+    background: #fafafa;
+    color: #111;
+  }
+
+  .card {
+    background: #fff;
+    border-color: rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+
+  .hero {
+    background: radial-gradient(circle at center, #fff, #ddd);
+  }
+}

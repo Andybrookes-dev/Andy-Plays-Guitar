@@ -1,66 +1,64 @@
+import { motion } from "framer-motion";
+import "./Home.css";
+
 export default function Home() {
   return (
-    <>
-      <section style={styles.hero}>
-        <h1 style={styles.title}>Andy Plays Guitar</h1>
-        <p style={styles.subtitle}>Tabs • Lessons • Blog</p>
+    <div className="home-container">
+
+      {/* HERO */}
+      <section className="hero">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="hero-title"
+        >
+          Andy Plays Guitar
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="hero-subtitle"
+        >
+          Tabs • Videos • Creativity • Noise
+        </motion.p>
       </section>
 
-      <section style={styles.grid}>
-        <div style={styles.card}>
-          <h2 style={styles.cardTitle}>Tabs</h2>
-          <p style={styles.cardText}>Browse guitar tabs arranged by difficulty and style.</p>
-        </div>
+      {/* FEATURE CARDS */}
+      <section className="card-grid">
+        <FeatureCard
+          title="Tabs"
+          text="Browse guitar tabs arranged by difficulty and style."
+        />
+        <FeatureCard
+          title="Videos"
+          text="Watch lessons, breakdowns, and play-throughs."
+        />
+        <FeatureCard
+          title="Blog"
+          text="Read posts about technique, gear, and creativity."
+        />
 
-        <div style={styles.card}>
-          <h2 style={styles.cardTitle}>Videos</h2>
-          <p style={styles.cardText}>Watch lessons, breakdowns, and play‑throughs.</p>
-        </div>
-
-        <div style={styles.card}>
-          <h2 style={styles.cardTitle}>Blog</h2>
-          <p style={styles.cardText}>Read posts about technique, gear, and creativity.</p>
-        </div>
+        <FeatureCard
+          title="Shop"
+          text="Purchase guitars, amplifiers, and accessories."
+        />
       </section>
-    </>
+    </div>
   );
 }
-const styles = {
-  hero: {
-    textAlign: "center",
-    marginBottom: "3rem",
-  },
-  title: {
-    fontSize: "3rem",
-    marginBottom: "0.5rem",
-    fontWeight: "700",
-    letterSpacing: "1px",
-  },
-  subtitle: {
-    fontSize: "1.25rem",
-    opacity: 0.85,
-  },
-  grid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-    gap: "2rem",
-  },
-  card: {
-    padding: "1.75rem",
-    background: "#1a1a1a",
-    borderRadius: "6px",
-    border: "1px solid #2a2a2a",
-    boxShadow: "0 4px 10px rgba(0,0,0,0.45)",
-    transition: "0.25s ease",
-    cursor: "pointer",
-  },
-  cardTitle: {
-    marginBottom: "0.5rem",
-    fontSize: "1.5rem",
-    color: "#d32f2f",
-  },
-  cardText: {
-    opacity: 0.85,
-    lineHeight: "1.5",
-  },
-};
+
+function FeatureCard({ title, text }) {
+  return (
+    <motion.div
+      className="card"
+      whileHover={{ scale: 1.05, y: -6 }}
+      transition={{ type: "spring", stiffness: 200 }}
+    >
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </motion.div>
+  );
+}
