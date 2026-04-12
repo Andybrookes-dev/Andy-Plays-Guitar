@@ -40,12 +40,12 @@ export default function Home() {
           title="Blog"
           text="Read posts about technique, gear, and creativity."
         />
-
         <FeatureCard
           title="Shop"
           text="Purchase guitars, amplifiers, and accessories."
         />
       </section>
+
     </div>
   );
 }

@@ -27,9 +27,32 @@
    HERO SECTION
 -------------------------------------------------- */
 .hero {
+  background-image: url("/assets/andy-studio.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
   text-align: center;
-  padding: clamp(4rem, 10vw, 8rem) 1rem;
-  background: radial-gradient(circle at center, #1a1a1a, #000);
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-title {
@@ -105,7 +128,5 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   }
 
-  .hero {
-    background: radial-gradient(circle at center, #fff, #ddd);
-  }
+  
 }

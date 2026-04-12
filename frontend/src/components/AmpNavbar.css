@@ -9,8 +9,6 @@
   padding-top: 0;
 }
 
-
-
 /* --------------------------------------------------
    FACEPLATE CONTAINER — the anchor for everything
 -------------------------------------------------- */
@@ -27,7 +25,6 @@
   pointer-events: none;
 }
 
-
 /* --------------------------------------------------
    CONTROLS — positioned relative to faceplate
 -------------------------------------------------- */
@@ -40,7 +37,6 @@
   gap: clamp(20px, 6vw, 120px);
   z-index: 10;
 }
-
 
 /* --------------------------------------------------
    KNOB + RING
@@ -78,7 +74,6 @@
   transform: translate(-50%, -50%) rotate(20deg);
 }
 
-
 /* --------------------------------------------------
    LABELS
 -------------------------------------------------- */
@@ -90,7 +85,6 @@
   text-transform: uppercase;
   color: black;
 }
-
 
 /* --------------------------------------------------
    MOBILE OVERRIDES
@@ -110,4 +104,108 @@
     margin-top: 20px;
     font-size: 0.75rem;
   }
+}
+
+/* --------------------------------------------------
+   ROCKER SWITCH (visual styles)
+-------------------------------------------------- */
+.rocker-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch-led {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px #000;
+  transition: all 0.2s ease;
+}
+
+.led-off {
+  background: #330000;
+}
+
+.led-on {
+  background: #ff3b3b;
+  box-shadow: 0 0 8px #ff3b3b, 0 0 16px #ff3b3b;
+}
+
+.rocker-switch {
+  width: 48px;
+  height: 24px;
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  border: 2px solid #444;
+  border-radius: 6px;
+  position: relative;
+  box-shadow: inset 0 0 6px #000;
+  transition: all 0.2s ease;
+}
+
+.switch-handle {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(145deg, #e6e6e6, #b3b3b3);
+  border-radius: 4px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.4);
+}
+
+.rocker-switch.on .switch-handle {
+  left: 26px;
+  background: linear-gradient(145deg, #ffffff, #d6d6d6);
+}
+
+.rocker-switch.off .switch-handle {
+  left: 2px;
+}
+
+.rocker-switch::before,
+.rocker-switch::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #777;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: inset 0 0 2px #000;
+}
+
+.rocker-switch::before {
+  left: -10px;
+}
+
+.rocker-switch::after {
+  right: -10px;
+}
+
+/* --------------------------------------------------
+   LOGIN SWITCH POSITIONING (NEW)
+-------------------------------------------------- */
+.login-switch-area {
+  position: absolute;
+  right: clamp(20px, 4vw, 60px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 20;
+}
+
+.login-label {
+  font-family: Arial, sans-serif;
+  font-size: clamp(12px, 1vw, 16px);
+  letter-spacing: 1px;
+  color: black;
+  text-transform: uppercase;
 }

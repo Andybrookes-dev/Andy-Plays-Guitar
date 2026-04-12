@@ -1,17 +1,21 @@
-.footer {
-  background: #111;
-  border-top: 3px solid #222;
-  padding: 2rem 1rem;
-  color: #ccc;
-  text-align: center;
-  margin-top: 4rem;
+.fretboard-wood {
+  background-image: url("/assets/fretboard.png");
+  background-size: cover;
+  background-position: center;
+  height: 220px;
 }
 
+
+/* Footer content */
 .footer-inner {
-  max-width: 900px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  margin-top: 80px;
 }
 
+/* Social links */
 .social-links {
   display: flex;
   justify-content: center;
@@ -19,20 +23,8 @@
   margin-bottom: 1rem;
 }
 
-.social-links a {
-  color: #f5c542; /* gold-ish to match your amp faceplate */
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: color 0.2s ease;
-}
-
-.social-links a:hover {
-  color: white;
-}
-
 .social-icon {
-  color: #f5c542; /* gold to match your amp faceplate */
+  color: #f5c542;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -41,7 +33,7 @@
   transform: scale(1.15);
 }
 
-.copyright {
+copyright {
   font-size: 0.9rem;
   opacity: 0.7;
 }
