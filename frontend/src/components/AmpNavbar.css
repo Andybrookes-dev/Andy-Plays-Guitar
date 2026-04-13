@@ -43,8 +43,8 @@
 -------------------------------------------------- */
 .knob-wrapper {
   position: relative;
-  width: clamp(110px, 14vw, 240px); 
-  height: clamp(110px, 14vw, 240px);
+  width: clamp(80px, 10vw, 160px);
+  height: clamp(110px, 14vw, 220px);
   text-align: center;
 }
 
@@ -78,13 +78,19 @@
    LABELS
 -------------------------------------------------- */
 .label {
-  margin-top: clamp(30px, 3vw, 70px);
+  position: absolute;
+  top: 10px; /* adjust to taste */
+  left: 50%;
+  transform: translateX(-50%);
   font-family: Arial, sans-serif;
   font-size: clamp(14px, 1.4vw, 22px);
   letter-spacing: 1px;
   text-transform: uppercase;
   color: black;
-}
+  /* /* pointer-events: none; */
+  z-index: 20;
+} */ 
+
 
 /* --------------------------------------------------
    MOBILE OVERRIDES
@@ -97,11 +103,11 @@
 
   .knob-wrapper {
     width: 70px;
-    height: 70px;
+    height: 110px; /* give room for label above */
   }
 
   .label {
-    margin-top: 20px;
+    top: -22px; /* tighter spacing for small screens */
     font-size: 0.75rem;
   }
 }
@@ -208,4 +214,16 @@
   letter-spacing: 1px;
   color: black;
   text-transform: uppercase;
+}
+@media (max-width: 480px) {
+  .login-switch-area {
+    top: 32%; /* lifts it above the SHOP label on small screens only */
+  }
+}
+.login-register-link {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-top: 4px;
+  color: black;
 }
